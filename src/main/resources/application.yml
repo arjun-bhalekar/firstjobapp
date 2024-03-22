@@ -2,16 +2,27 @@ spring:
   application:
     name: firstjobapp
 
-  h2:
-    console:
-      enabled: true
+# H2 Database
+
+#  h2:
+#    console:
+#      enabled: true
+#  datasource:
+#    url: jdbc:h2:mem:test
+
+# PostgreSQL Database
   datasource:
-    url: jdbc:h2:mem:test
+    url: jdbc:postgresql://localhost:5432/jobapp
+    username: parjunb
+    password: parjunb
+
 
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate  #update #create-drop
+    database: POSTGRESQL
+    #database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 #actuator related
 management:
@@ -30,7 +41,7 @@ management:
       show-details: ALWAYS
     #enabling shutdown end point
     shutdown:
-      enabled: true
+      enabled: false #true
 
   info:
     env:

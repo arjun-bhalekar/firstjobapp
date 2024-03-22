@@ -37,6 +37,13 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!-- for PostgreSQL or Postgres -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
         <!-- for Actuator -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
