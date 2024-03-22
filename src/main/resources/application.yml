@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: firstjobapp
+
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:test
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+#actuator related
+management:
+  endpoints:
+    web:
+      exposure:
+        #include: "*"
+        include:
+          - info
+          - loggers
+          - metrics
+          - shutdown
+
+  endpoint:
+    health:
+      show-details: ALWAYS
+    #enabling shutdown end point
+    shutdown:
+      enabled: true
+
+  info:
+    env:
+      enabled: true
+
+#setting application information in info end point
+info:
+  app:
+    name: "JobApplication"
+    description: "Backend Service for JobApplication. Build by ARJUN B."
+    version: "1.0.0"
+
+
+server:
+  shutdown: GRACEFUL
