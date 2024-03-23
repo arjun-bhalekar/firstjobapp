@@ -1,5 +1,5 @@
 # firstjobapp
-Spring Boot Application containing various Job App related REST APIs
+Spring Boot (Monolithic) Application containing Company, Job & Review related Endpoints.
 
 
 ## Spring boot with Docker 
